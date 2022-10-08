@@ -22,13 +22,21 @@
  *      In kết quả totalSalary
  */
 
-var workDay = 7,
-  salaryPerDay = 100000,
-  totalSalary =0;
+function CalculateSalary(){
+  var workDay = document.getElementById("work-day").value;
+  var salaryPerDay = document.getElementById("salary-per-day").value;
+  var noti =  document.getElementById("noti-1");
+  var totalSalary = 0;
 
- totalSalary = workDay * salaryPerDay;
+  
+ totalSalary = Number(workDay) * Number(salaryPerDay);
+ 
+ noti.classList = "alert alert-success col-12 mt-3"
+ noti.innerHTML = "Tiền lương nhân viên là: " + new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(totalSalary);
 
-console.log("Tiền lương nhân viên là: " + totalSalary+" VND");
+
+}
+
 
 
 

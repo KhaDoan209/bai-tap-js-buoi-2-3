@@ -1,27 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài tập JS 2-3</title>
 
     <!-- Bootstrap 5.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Main CSS  -->
     <link rel="stylesheet" href="./index.css">
-</head>
-<body>
-    
+  </head>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+  <body>
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-2">
+          <div class="list-group" id="list-tab" role="tablist">
+
+            <a class="list-group-item list-group-item-action active" id="bai-1-list" data-bs-toggle="list" href="#bai-1"
+              role="tab" aria-controls="list-home">Bài 1</a>
+
+            <a class="list-group-item list-group-item-action my-2 " id="bai-2-list" data-bs-toggle="list" href="#bai-2"
+              role="tab" aria-controls="list-profile">Bài 2</a>
+
+            <a class="list-group-item list-group-item-action my-2 " id="bai-3-list" data-bs-toggle="list" href="#bai-3"
+              role="tab" aria-controls="list-messages">Bài 3</a>
+
+            <a class="list-group-item list-group-item-action" id="bai-4-list" data-bs-toggle="list" href="#bai-4"
+              role="tab" aria-controls="list-settings">Bài 4</a>
+
+            <a class="list-group-item list-group-item-action my-2" id="bai-5-list" data-bs-toggle="list" href="#bai-5"
+              role="tab" aria-controls="list-settings">Bài 5</a>
+
+          </div>
+        </div>
+
+        <div class="col-10">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="bai__1 tab-pane fade show active" id="bai-1" role="tabpanel" aria-labelledby="list-home-list">
+              <div class="container">
+                <h2 class="text-center mb-4">Tính lương nhân viên</h2>
+                <form class="d-flex justify-content-around d-grid gap-2 ">
+                  <div class="form-group col-5">
+                    <label class="mb-2" for="work-day">Số ngày công</label>
+                    <input type="text" class="form-control" id="work-day" aria-describedby="emailHelp">
+                  </div>
+                  <div class="form-group col-5">
+                    <label class="mb-2" for="salary-per-day">Lương một ngày</label>
+                    <input type="text" class="form-control" id="salary-per-day">
+                  </div>
+                  <button type="button" onclick="CalculateSalary()" class="btn btn-primary mt-3 px-3 py-0"><i
+                      class="fa-solid fa-calculator"></i></button>
+                </form>
+                <p id="noti-1"></p>
+              </div>
+            </div>
+
+            <div class="bai__2 tab-pane fade" id="bai-2" role="tabpanel" aria-labelledby="list-profile-list">
+              <div class="container">
+                <h2 class="text-center mb-4">Tính trung bình cộng</h2>
+                <form class="row">
+                  <div class="form-group col-6 w-25">
+                    <label class="mb-2" for="numb1">Số thứ 1</label>
+                    <input type="text" class="form-control" id="numb1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="form-group col-6 w-25">
+                    <label class="mb-2" for="numb2">Số thứ 2</label>
+                    <input type="text" class="form-control" id="numb2">
+                  </div>
+                  <div class="form-group col-6 w-25">
+                    <label class="mb-2" for="numb3">Số thứ 3</label>
+                    <input type="text" class="form-control" id="numb3">
+                  </div>
+                  <div class="form-group col-6 w-25">
+                    <label class="mb-2" for="numb4">Số thứ 4</label>
+                    <input type="text" class="form-control" id="numb4">
+                  </div>
+                  <div class="form-group col-6 w-25">
+                    <label class="mb-2" for="numb5">Số thứ 5</label>
+                    <input type="text" class="form-control" id="numb5">
+                  </div>
+                </form>
+                <button type="button" onclick="CalculateAverage()" class="btn btn-primary mt-3 px-1 py-2 col-1"><i
+                    class="fa-solid fa-calculator"></i></button>
+                <p id="noti-2"></p>
+              </div>
+            </div>
+
+            <div class="bai__3 tab-pane fade" id="bai-3" role="tabpanel" aria-labelledby="list-messages-list">
+              <div class="container">
+                <h2 class="text-center mb-4">Quy đổi tiền tệ</h2>
+                <form class="row d-flex justify-content-start">
+                  <div class="form-group col-6 w-25">
+                    <label class="mb-2" for="usd">USD</label>
+                    <input type="text" class="form-control" id="usd" aria-describedby="emailHelp">
+                  </div>
+                  <div class="icon__container col-2">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </form>
+                <button type="button" onclick="ConvertToVND()" class="btn btn-primary mt-3 px-1 py-2 col-1">Đổi</button>
+                <p id="noti-3"></p>
+              </div>
+            </div>
+
+            <div class="bai__4 tab-pane fade" id="bai-4" role="tabpanel" aria-labelledby="list-settings-list">
+              <div class="container">
+                <h2 class="text-center mb-4">Tính diện tích hình chữ nhật</h2>
+                <form class="row d-flex justify-content-start col-12">
+                  <div class="form-group col-3">
+                    <label class="mb-2" for="length">Chiều dài</label>
+                    <input type="text" class="form-control" id="length" aria-describedby="emailHelp">
+                  </div>
+                  <div class="form-group col-3">
+                    <label class="mb-2" for="width">Chiều rộng</label>
+                    <input type="text" class="form-control" id="width" aria-describedby="emailHelp">
+                  </div>
+
+                  <button type="button" onclick="CalculateRectangleArea()" class="btn btn-primary mt-3 mx-2 col-2">Tính
+                    diện
+                    tích</button>
+                  <button type="button" onclick="CalculateRectangleParameter()" class="btn btn-primary mt-3 col-2">Tính
+                    chu
+                    vi</button>
+                </form>
+                <p id="noti-4"></p>
+              </div>
+            </div>
+
+            <div class="bai__5 tab-pane fade" id="bai-5" role="tabpanel" aria-labelledby="list-settings-list">
+              <div class="container">
+                <h2 class="text-center mb-4">Tính tổng 2 ký số của số có 2 chữ số</h2>
+                <form class="row d-flex justify-content-start col-12">
+                  <div class="form-group col-3">
+                    <label class="mb-2" for="numb">Nhập số có 2 chữ số</label>
+                    <input type="text" class="form-control" id="numb" aria-describedby="emailHelp">
+                  </div>
+                  <button type="button" onclick="CalculateSum()" class="btn btn-primary mt-3 col-1 py-0 px-0"><i
+                      class="fa-solid fa-calculator"></i></button>
+                </form>
+                <p id="noti-5"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"></script>
     <script src="./js/bai-1.js"></script>
     <script src="./js/bai-2.js"></script>
     <script src="./js/bai-3.js"></script>
     <script src="./js/bai-4.js"></script>
     <script src="./js/bai-5.js"></script>
-</body>
+  </body>
+
 </html>

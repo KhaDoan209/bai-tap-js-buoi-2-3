@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body .container {
+  width: 80%;
+  margin: auto;
+}
+
+.bai__1 {
+  position: relative;
+}
+
+button i {
+  font-size: 20px;
+}
+
+.icon__container {
+  position: relative;
+}
+.icon__container i {
+  position: absolute;
+  top: 55%;
+  font-size: 25px;
+}
