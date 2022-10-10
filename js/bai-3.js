@@ -32,7 +32,7 @@ function ConvertToVND() {
 
   vnd = Number(usd) * rate;
 
-  noti.classList = "alert alert-success";
+  noti.classList = "alert alert-success col-5";
   noti.innerHTML =
     "Số tiền quy đổi: " +
     new Intl.NumberFormat("de-DE", {

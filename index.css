@@ -62,3 +62,16 @@ label {
   font-size: 18px;
   font-weight: 500;
 }
+
+#noti-3 {
+  margin: 2% 0%;
+}
+
+@keyframes rotate90Deg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
