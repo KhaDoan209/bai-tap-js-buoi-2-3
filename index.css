@@ -1,11 +1,18 @@
+:root {
+  --border-radius: 8px;
+  --font-normal: 16px;
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f0eaea;
+}
 body .container {
-  width: 80%;
+  width: 75%;
   margin: auto;
 }
 
@@ -17,6 +24,27 @@ button i {
   font-size: 20px;
 }
 
+.button {
+  background-color: #eaedef;
+  padding: 10px 0px;
+  border: 1px solid transparent;
+  color: #4b4848;
+  font-size: var(--font-normal);
+  font-weight: 400;
+  box-shadow: 1px 4px 3px #d5d3d3;
+}
+
+.list-group-item.active {
+  border: 1px solid transparent;
+  color: white;
+  transform: translateX(15px);
+}
+
+.list-group .list-group-item {
+  border-radius: var(--border-radius);
+  transition: all 0.5s;
+}
+
 .icon__container {
   position: relative;
 }
@@ -24,4 +52,13 @@ button i {
   position: absolute;
   top: 55%;
   font-size: 25px;
+}
+
+.list__bai {
+  width: 9%;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 500;
 }
